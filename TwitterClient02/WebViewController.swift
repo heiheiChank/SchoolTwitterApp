@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController, WKNavigationDelegate, UIWebViewDelegate {
     
     var openURL = NSURL()
     private var webView = WKWebView()
@@ -37,6 +37,11 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         let request = NSURLRequest(URL: openURL)
         webView.loadRequest(request)
         
+//        var url = NSURL(string: String(request))
+//        var request2 = NSURLRequest(URL: url!)
+        
+        // リクエストを生成する
+        
         // プログレスビューの生成、描画
         progressView = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
         progressView.frame = CGRectMake(0, calcBarHeight(), view.bounds.size.width, 2)
@@ -46,7 +51,6 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         webView.addObserver(self, forKeyPath:"estimatedProgress", options:.New, context:nil)
 
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,6 +117,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     override func viewWillLayoutSubviews() { // 画面回転時にバーの高さを計算し直す
         progressView.frame = CGRectMake(0, calcBarHeight(), view.bounds.size.width, 2)
     }
+    
+    
     
     //    override func prefersStatusBarHidden() -> Bool { // 横長表示（Portrait画面）でもステータスバーを表示したい時にfalseを返す
     //        return false

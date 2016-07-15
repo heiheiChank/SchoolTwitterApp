@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterlan.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQJ-e2-Re0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rQJ-e2-Re0" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="2IK-7g-P2L"/>
+                            <constraint firstItem="rQJ-e2-Re0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="53G-BK-yhv"/>
+                            <constraint firstAttribute="trailing" secondItem="rQJ-e2-Re0" secondAttribute="trailing" id="VaV-5e-khw"/>
+                            <constraint firstItem="rQJ-e2-Re0" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="f2O-ZX-WV8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -23,4 +35,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="twitterlan.png" width="750" height="1334"/>
+    </resources>
 </document>

@@ -217,7 +217,9 @@ class ViewController: UIViewController {
         } else if segue.identifier == "FavoriteListSegue" {
             let favoriteLineVC = segue.destinationViewController as! FavoritesTableTableViewController
             favoriteLineVC.twitterAccount = twitterAccount // 次のVCへTwitterアカウントを引き渡す
-
+        } else if segue.identifier == "FollowersListSegue" {
+            let followersLineVC = segue.destinationViewController as! FollowersListTableViewController
+            followersLineVC.twitterAccount = twitterAccount // 次のVCへTwitterアカウントを引き渡す
         }
     }
 
